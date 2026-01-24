@@ -171,7 +171,7 @@ load_existing_labels() {
   fi
   info "Loading existing labels"
   local json
-  json="$(gh label list --limit 1000 --json name --repo "${REPO}")"
+  json="$(gh api --paginate "repos/${REPO}/labels")"
   while IFS= read -r label_name; do
     [[ -z "${label_name}" ]] && continue
     EXISTING_LABELS["${label_name}"]=1
@@ -185,10 +185,10 @@ upsert_label() {
 
   if [[ -n "${EXISTING_LABELS[${name}]:-}" ]]; then
     info "Updating label: ${name}"
-    run_cmd gh label edit "${name}" --color "${color}" --description "${description}" --repo "${REPO}"
+    run_cmd gh api -X PATCH "repos/${REPO}/labels/${name}" -f "color=${color}" -f "description=${description}"
   else
     info "Creating label: ${name}"
-    run_cmd gh label create "${name}" --color "${color}" --description "${description}" --repo "${REPO}"
+    run_cmd gh api -X POST "repos/${REPO}/labels" -f "name=${name}" -f "color=${color}" -f "description=${description}"
     EXISTING_LABELS["${name}"]=1
   fi
 }
