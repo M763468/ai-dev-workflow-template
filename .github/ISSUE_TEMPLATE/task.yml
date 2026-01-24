@@ -3,6 +3,8 @@ description: "小さめの作業や整備"
 title: "[Task] <短い要約>"
 labels:
   - "task"
+  - "priority:med"
+  - "scope:small"
 body:
   - type: textarea
     id: goal

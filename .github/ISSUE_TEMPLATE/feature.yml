@@ -3,6 +3,8 @@ description: "新機能や実装タスクの提案"
 title: "[Feature] <短い要約>"
 labels:
   - "feature"
+  - "priority:med"
+  - "scope:medium"
 body:
   - type: markdown
     attributes:

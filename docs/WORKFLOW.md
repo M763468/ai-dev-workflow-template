@@ -51,12 +51,11 @@
 
 ### 必須ファイル
 
-```
-.github/
-├── ISSUE_TEMPLATE/
-│   └── feature.yml        # Issue構造を固定（Goal / Scope / Acceptance）
-├── pull_request_template.md
-```
+- `.github/ISSUE_TEMPLATE/*.yml`
+- `.github/pull_request_template.md`
+- `docs/LABELS.md` (new)
+
+The new `docs/LABELS.md` file serves as a "Label Dictionary" to standardize label usage across the project. For more details, refer to the file itself.
 
 ### pull_request_template.md（AI向け最適化）
 
