@@ -39,12 +39,19 @@ if [[ "${1:-}" == "-h" || "${1:-}" == "--help" ]]; then
 fi
 
 DRY_RUN_REQUESTED=0
-for arg in "$@"; do
-  if [[ "${arg}" == "--dry-run" ]]; then
-    DRY_RUN_REQUESTED=1
-    break
-  fi
+args_copy=("$@")
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --dry-run)
+      DRY_RUN_REQUESTED=1
+      shift
+      ;;
+    *)
+      shift
+      ;;
+  esac
 done
+set -- "${args_copy[@]}"
 
 info "Repository root: ${ROOT_DIR}"
 

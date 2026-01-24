@@ -131,8 +131,9 @@ detect_repo() {
     return 0
   fi
 
-  if parse_repo_from_remote >/dev/null 2>&1; then
-    parse_repo_from_remote
+  local repo_name
+  if repo_name="$(parse_repo_from_remote 2>/dev/null)"; then
+    printf "%s" "${repo_name}"
     return 0
   fi
 
@@ -146,7 +147,11 @@ detect_repo() {
 
 run_cmd() {
   if [[ "${DRY_RUN}" -eq 1 ]]; then
-    printf "[DRY-RUN] %s\n" "$*"
+    local -a quoted_args
+    for arg in "$@"; do
+      quoted_args+=("$(printf '%q' "$arg")")
+    done
+    printf "[DRY-RUN] %s\n" "${quoted_args[*]}"
     return 0
   fi
   "$@"
@@ -271,7 +276,7 @@ create_issue() {
   local title="$1"
   local body="$2"
   info "Creating issue: ${title}"
-  run_cmd gh issue create --title "${title}" --body "${body}" --repo "${REPO}"
+  run_cmd gh issue create --title "${title}" --body "$(printf '%b' "${body}")" --repo "${REPO}"
   EXISTING_ISSUES["${title}"]=1
 }
 
