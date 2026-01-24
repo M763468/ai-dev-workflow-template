@@ -2,13 +2,14 @@
 set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "${ROOT_DIR}"
 
 info() {
   printf "[INFO] %s\n" "$*"
 }
 
 warn() {
-  printf "[WARN] %s\n" "$*"
+  printf "[WARN] %s\n" "$*" >&2
 }
 
 run_or_warn() {

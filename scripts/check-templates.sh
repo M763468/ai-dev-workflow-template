@@ -3,20 +3,6 @@ set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
-usage() {
-  cat <<'EOF'
-Check whether the minimum template files for this repository exist.
-
-This script is intended to be run right after "Use this template".
-If any required file is missing, it exits with a non-zero status.
-EOF
-}
-
-if [[ "${1:-}" == "-h" || "${1:-}" == "--help" ]]; then
-  usage
-  exit 0
-fi
-
 required_files=(
   "README.md"
   ".github/pull_request_template.md"
@@ -26,6 +12,23 @@ required_files=(
   "docs/WORKFLOW.md"
   "docs/PROMPTS.md"
 )
+
+usage() {
+  cat <<EOF
+Check whether the minimum template files for this repository exist.
+
+This script is intended to be run right after "Use this template".
+If any required file is missing, it exits with a non-zero status.
+
+Files checked:
+$(for rel_path in "${required_files[@]}"; do printf "  - %s\n" "${rel_path}"; done)
+EOF
+}
+
+if [[ "${1:-}" == "-h" || "${1:-}" == "--help" ]]; then
+  usage
+  exit 0
+fi
 
 missing=0
 
