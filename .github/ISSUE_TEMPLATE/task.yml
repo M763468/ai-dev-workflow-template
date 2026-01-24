@@ -1,0 +1,31 @@
+name: "Task / 雑務・リファクタ・ドキュメント"
+description: "小さめの作業や整備"
+title: "[Task] <短い要約>"
+labels:
+  - "task"
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: "Goal"
+      placeholder: "例: README に使い方を追記する"
+    validations:
+      required: true
+
+  - type: textarea
+    id: done
+    attributes:
+      label: "Done"
+      description: "完了判定を箇条書きで。"
+      placeholder: |
+        - README に CLI 例が追加されている
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: "Notes"
+      description: "注意点や関連リンクなど。"
+    validations:
+      required: false
