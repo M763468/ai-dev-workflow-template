@@ -27,10 +27,23 @@
 ./scripts/init.sh
 ```
 
-このスクリプトは以下を確認します。
+このスクリプトは以下を確認・初期化します。
 
 - `gh` CLI の有無と認証状態
 - Issue / PR テンプレなど必須ファイルの存在
+- labels / milestones の初期セットアップ（冪等）
+
+任意の初期Issueもまとめて作る場合は、次のように実行します。
+
+```bash
+./scripts/init.sh --with-issues
+```
+
+変更内容だけを確認したい場合は dry-run が便利です。
+
+```bash
+./scripts/init.sh --dry-run --repo <owner>/<repo>
+```
 
 ---
 

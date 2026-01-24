@@ -42,11 +42,16 @@ cd <your-repo-name>
 ./scripts/init.sh
 ```
 
-テンプレ関連ファイルの存在確認と、`gh` CLI の状態確認を行います。
+テンプレ関連ファイルの存在確認に加えて、`gh` CLI が使える場合は
+labels / milestones（および任意の初期Issue）を初期化します。
 より詳しい説明は次でも確認できます。
 
 ```bash
 ./scripts/check-templates.sh --help
+```
+
+```bash
+./scripts/init_repo.sh --help
 ```
 
 ### 3) Issue / PR テンプレが効くことを確認
@@ -99,7 +104,8 @@ docs/
 
 scripts/
 ├── check-templates.sh
-└── init.sh
+├── init.sh
+└── init_repo.sh
 ```
 
 ---
