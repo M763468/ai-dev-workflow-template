@@ -53,7 +53,7 @@
 
 - `.github/ISSUE_TEMPLATE/*.yml`
 - `.github/pull_request_template.md`
-- [docs/LABELS.md](LABELS.md): ラベル標準化のための辞書。詳細はこちらを参照してください。
+- [LABELS.md](LABELS.md): ラベル標準化のための辞書。詳細はこちらを参照してください。
 
 ### pull_request_template.md（AI向け最適化）
 
