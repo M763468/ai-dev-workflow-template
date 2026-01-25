@@ -53,9 +53,7 @@
 
 - `.github/ISSUE_TEMPLATE/*.yml`
 - `.github/pull_request_template.md`
-- `docs/LABELS.md` (new)
-
-The new `docs/LABELS.md` file serves as a "Label Dictionary" to standardize label usage across the project. For more details, refer to the file itself.
+- [LABELS.md](LABELS.md): ラベル標準化のための辞書。詳細はこちらを参照してください。
 
 ### pull_request_template.md（AI向け最適化）
 
@@ -215,4 +213,5 @@ merge
 
 ## 11. AI Agent Rules
 
-For detailed rules and guidelines for AI agents, please refer to the `AGENTS.md` file in the root of the repository. This document serves as the "constitution" for AI agents and outlines specific do's and don'ts, change policies, and quality standards.
+AIエージェント向けの具体的なルールやガイドラインについては、リポジトリルートの [AGENTS.md](../AGENTS.md) を参照してください。
+このドキュメントはAIエージェントのための「憲法」として機能し、品質基準や行動規範を定義しています。

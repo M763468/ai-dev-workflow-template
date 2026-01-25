@@ -74,39 +74,13 @@ gh issue create --title "[Task] テンプレ動作確認" --body "テンプレ�
 
 ## 使い方（運用フロー）
 
-最小フローは次の通りです。
+詳細は [WORKFLOW.md](docs/WORKFLOW.md) を参照してください。
+基本的な原則は **1 Issue = 1 AI implementation = 1 PR** です。
 
-1. Issueをテンプレから作る（Goal / Scope / Acceptance を埋める）
-2. AIに実装させる（1 Issueに集中）
-3. PRテンプレに沿って差分を説明する
-4. Acceptance Criteria を基準にレビュー / マージ判断する
-
-詳細は `docs/WORKFLOW.md` を参照してください。
-
-- `docs/WORKFLOW.md`: 全体設計と判断基準
-- `docs/PROMPTS.md`: プロンプト置き場（雛形）
-
----
-
-## このテンプレートの構成
-
-```text
-.github/
-├── ISSUE_TEMPLATE/
-│   ├── bug.yml
-│   ├── feature.yml
-│   └── task.yml
-└── pull_request_template.md
-
-docs/
-├── WORKFLOW.md
-└── PROMPTS.md
-
-scripts/
-├── check-templates.sh
-├── init.sh
-└── init_repo.sh
-```
+- [docs/WORKFLOW.md](docs/WORKFLOW.md): 全体設計と判断基準
+- [docs/LABELS.md](docs/LABELS.md): ラベルの定義と標準
+- [AGENTS.md](AGENTS.md): AIエージェントのための行動指針
+- [docs/PROMPTS.md](docs/PROMPTS.md): プロンプト置き場（雛形）
 
 ---
 
