@@ -3,6 +3,10 @@ description: "不具合の報告と修正依頼"
 title: "[Bug] <短い要約>"
 labels:
   - "bug"
+  - "priority:med"
+  - "scope:small"
+  - "priority:med"
+  - "scope:small"
 body:
   - type: markdown
     attributes:

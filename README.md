@@ -139,6 +139,6 @@ scripts/
 
 ## 次にやると良い拡張（任意）
 
-- `.github/labels.yml` などのラベル標準化
+- `docs/LABELS.md` でラベル標準化
 - `tools/` にレビュー支援スクリプトを追加
 - `docs/DECISIONS.md` で設計判断ログを残す
