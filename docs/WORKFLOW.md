@@ -216,9 +216,3 @@ merge
 ## 11. AI Agent Rules
 
 For detailed rules and guidelines for AI agents, please refer to the `AGENTS.md` file in the root of the repository. This document serves as the "constitution" for AI agents and outlines specific do's and don'ts, change policies, and quality standards.
-
----
-
-## 11. AI Agent Rules
-
-For detailed rules and guidelines for AI agents, please refer to the `AGENTS.md` file in the root of the repository. This document serves as the "constitution" for AI agents and outlines specific do's and don'ts, change policies, and quality standards.
