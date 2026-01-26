@@ -78,8 +78,11 @@ labels / milestones（および任意の初期Issue）を初期化します。
 - `docs` ディレクトリ
 - `AGENTS.md`
 - `scripts` ディレクトリ
+- `skills/` ディレクトリ（配布用）
+- `.agents/skills`（運用先として作成・配置）
 
 上記を既存リポジトリにコピーします。CI/CDの変更や依存関係の追加は不要です。
+`skills/` は配布用として残し、運用は `.agents/skills` を推奨します。詳細は [docs/WORKFLOW.md](docs/WORKFLOW.md) を参照してください。
 
 #### Step 2: 一部のIssueで試験運用
 
@@ -100,6 +103,7 @@ labels / milestones（および任意の初期Issue）を初期化します。
 ### 推奨: 参照型 (Reference Model)
 
 **プロジェクトの `README.md` や `CONTRIBUTING.md` から、このテンプレートの `docs/WORKFLOW.md` 等へリンクする** 運用です。
+導入先で `docs/ai-workflow/` などにまとめる場合は、リンクをその置き場所に合わせて調整します。
 
 - **メリット**:
   - 常に最新のテンプレート運用を参照できる
@@ -133,6 +137,8 @@ labels / milestones（および任意の初期Issue）を初期化します。
 | `docs/PROMPTS.md` | **プロンプト集**: AIへの指示に使えるプロンプトの雛形 |
 | `.github/` | **テンプレート**: Issue / PR のテンプレート |
 | `scripts/` | **支援ツール**: 初期化やチェックのためのスクリプト |
+| `skills/` | **配布用スキル**: 共通スキルの雛形 |
+| `.agents/skills` | **運用スキル置き場**: エージェントが読み込むディレクトリ（推奨） |
 
 ---
 
