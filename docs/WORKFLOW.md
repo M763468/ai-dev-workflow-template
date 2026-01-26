@@ -112,7 +112,7 @@
 ### AI作業ブランチ
 
 - **AIが作成**: 親ブランチから、`feature/<issue-number>-<short-description>` のような命名規則で作業ブランチを作成します。
-- **Issueで指定**: 子Issue作成時に、`Base branch`項目で親ブランチを指定します。
+- **Issueで指定**: 子Issue作成時に、`Base branch`項目で親ブランチを指定します（未定の場合は空欄でOK、後からコメントやIssue編集で指定可能）。
 
 ### Pull Request (PR) の運用
 
