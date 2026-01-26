@@ -71,19 +71,24 @@ labels / milestones（および任意の初期Issue）を初期化します。
 
 ### 既存プロジェクトへの段階的導入手順
 
-すでに動いているプロジェクトに導入する場合、以下の段階的な導入を推奨します。
+すでに動いているプロジェクトに導入する場合、まずこのテンプレートリポジトリを適当な場所に `git clone` してから、移植スクリプトを実行する形が最も簡単です。
 
-#### Step 1: ドキュメントとテンプレートのみ導入
+```bash
+# 1. テンプレートをクローン
+git clone https://github.com/your-org/ai-dev-workflow-template.git
 
-- `.github` ディレクトリ配下の Issue / PR テンプレート
-- `docs` ディレクトリ
-- `AGENTS.md`
-- `scripts` ディレクトリ
-- `skills/` ディレクトリ（配布用）
-- `.agents/skills`（運用先として作成・配置）
+# 2. 既存プロジェクトに移動
+cd /path/to/your-project
 
-上記を既存リポジトリにコピーします。CI/CDの変更や依存関係の追加は不要です。
-`skills/` は配布用として残し、運用は `.agents/skills` を推奨します。詳細は [docs/WORKFLOW.md](docs/WORKFLOW.md) を参照してください。
+# 3. 移植スクリプトを実行
+/path/to/ai-dev-workflow-template/scripts/import.sh
+```
+
+このスクリプトは、テンプレのコア要素（`.github`, `docs`, `scripts`, `skills`, `AGENTS.md`）を安全にコピーします。
+詳細は [docs/WORKFLOW.md](docs/WORKFLOW.md) を参照してください。
+
+- `scripts/import.sh`: 既存プロジェクトへのテンプレファイル移植用
+- `scripts/init.sh`: `import.sh` 実行後、または新規プロジェクトのGitHubリソース（labels, milestones）初期化用
 
 #### Step 2: 一部のIssueで試験運用
 

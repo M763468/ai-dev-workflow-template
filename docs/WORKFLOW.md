@@ -21,7 +21,9 @@
 
 ## 0. 初期化（テンプレ適用直後の10分）
 
-テンプレートから作成した直後は、まず次を実行します。
+### 新規プロジェクトの場合
+
+テンプレートからリポジトリを新規作成した場合は、まず次を実行します。
 
 ```bash
 ./scripts/init.sh
@@ -50,6 +52,58 @@
 ```bash
 ./scripts/init.sh --dry-run --repo <owner>/<repo>
 ```
+
+### 既存プロジェクトに導入する場合
+
+すでに動いているプロジェクトにワークフローを導入する場合、まずこのテンプレートリポジトリを適当な場所に `git clone` します。
+
+```bash
+git clone https://github.com/your-org/ai-dev-workflow-template.git
+```
+
+次に、導入したいあなたのプロジェクトのルートディレクトリで、移植スクリプトを実行します。
+
+```bash
+cd /path/to/your-project
+/path/to/ai-dev-workflow-template/scripts/import.sh
+```
+
+このスクリプトは、以下のファイル群をあなたのプロジェクトにコピーします。
+
+- `.github/`: Issue / PR テンプレート
+- `docs/`: ワークフロー関連ドキュメント
+- `scripts/`: 初期化・支援スクリプト
+- `skills/`: `.agents/skills` ディレクトリにコピーされるAIスキル
+- `AGENTS.md`: AIエージェント向けの指示書
+
+ファイルが既に存在する場合は、上書きを避けるためスキップされます。
+移植が完了したら、`./scripts/init.sh` を実行して、GitHubのラベルやマイルストーンをセットアップしてください。
+
+### 既存プロジェクトに導入する場合
+
+すでに動いているプロジェクトにワークフローを導入する場合、まずこのテンプレートリポジトリを適当な場所に `git clone` します。
+
+```bash
+git clone https://github.com/your-org/ai-dev-workflow-template.git
+```
+
+次に、導入したいあなたのプロジェクトのルートディレクトリで、移植スクリプトを実行します。
+
+```bash
+cd /path/to/your-project
+/path/to/ai-dev-workflow-template/scripts/import.sh
+```
+
+このスクリプトは、以下のファイル群をあなたのプロジェクトにコピーします。
+
+- `.github/`: Issue / PR テンプレート
+- `docs/`: ワークフロー関連ドキュメント
+- `scripts/`: 初期化・支援スクリプト
+- `skills/`: `.agents/skills` ディレクトリにコピーされるAIスキル
+- `AGENTS.md`: AIエージェント向けの指示書
+
+ファイルが既に存在する場合は、上書きを避けるためスキップされます。
+移植が完了したら、`./scripts/init.sh` を実行して、GitHubのラベルやマイルストーンをセットアップしてください。
 
 ---
 
