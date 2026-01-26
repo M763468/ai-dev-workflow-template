@@ -65,6 +65,7 @@ labels / milestones（および任意の初期Issue）を初期化します。
   - PR: PR作成画面を開くとテンプレが自動で読み込まれます
 - **CLIで確認（任意）**:
   - `gh issue create --template task.yml --title "Test" --body "Test"`
+  - 例: `gh issue create --title "[Task] テンプレ動作確認" --body "テンプレ確認用" --template task.yml`
 
 ---
 
@@ -99,6 +100,7 @@ labels / milestones（および任意の初期Issue）を初期化します。
 ## ドキュメントの運用方針
 
 このテンプレートに含まれるドキュメントと、あなたのプロジェクト固有のドキュメントが重複し、混乱を招くことを防ぐための方針です。
+詳細は [docs/WORKFLOW.md](docs/WORKFLOW.md) を参照してください。基本的な原則は **1 Issue = 1 AI implementation = 1 PR** です。
 
 ### 推奨: 参照型 (Reference Model)
 
