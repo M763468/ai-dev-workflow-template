@@ -12,6 +12,33 @@ body:
         ## ✨ Feature Issue
         目的・背景・入出力を明確に書くことで、AIエージェントが迷わず実装できます。
 
+  - type: markdown
+    attributes:
+      value: |
+        ## ブランチ運用
+        AIエージェントが作業するブランチを指定します。未定なら空欄でもOKで、あとからコメント等で指定できます。
+
+  - type: input
+    id: base_branch
+    attributes:
+      label: "Base branch"
+      description: "作業ブランチの元となる親ブランチ名を指定します。"
+      placeholder: "例: feature/<topic-name>"
+
+  - type: input
+    id: branch_name
+    attributes:
+      label: "Branch name"
+      description: "AIが作成する作業ブランチ名を指定します。"
+      placeholder: "例: feature/123-new-feature"
+
+  - type: input
+    id: pr_base
+    attributes:
+      label: "PR base"
+      description: "PRの向き先となるブランチ（通常はBase branchと同じ）"
+      placeholder: "例: feature/<topic-name>"
+
   - type: textarea
     id: goal
     attributes:

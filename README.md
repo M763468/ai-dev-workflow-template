@@ -74,10 +74,10 @@ gh issue create --title "[Task] テンプレ動作確認" --body "テンプレ�
 
 ## 使い方（運用フロー）
 
-詳細は [WORKFLOW.md](docs/WORKFLOW.md) を参照してください。
+詳細は [docs/WORKFLOW.md](docs/WORKFLOW.md) を参照してください。
 基本的な原則は **1 Issue = 1 AI implementation = 1 PR** です。
 
-- [docs/WORKFLOW.md](docs/WORKFLOW.md): 全体設計と判断基準
+- [docs/WORKFLOW.md](docs/WORKFLOW.md): 全体設計と判断基準（ブランチ運用もここに記載）
 - [docs/LABELS.md](docs/LABELS.md): ラベルの定義と標準
 - [AGENTS.md](AGENTS.md): AIエージェントのための行動指針
 - [docs/PROMPTS.md](docs/PROMPTS.md): プロンプト置き場（雛形）
