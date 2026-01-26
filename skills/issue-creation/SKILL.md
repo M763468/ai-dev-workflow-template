@@ -24,5 +24,8 @@ Draft a clear issue with Goal/Scope/Acceptance Criteria so AI can implement it.
 - gh: create issue if needed (e.g., `gh issue create`)
 - git: not required in most cases
 
+## Example commands
+- `gh issue create --title \"[Task] <title>\" --body \"<body>\"`
+
 ## Notes
 - Always include Out-of-scope items to prevent scope creep.

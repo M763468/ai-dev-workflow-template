@@ -49,6 +49,6 @@ This section is for project-level custom commands, rules, or environment-specifi
 
 ## 7. Skills
 
-- 共通Skillsは `skills/` に配置する
+- 共通スキルは `skills/` に配置する
 - リポジトリ固有の最適化は `.agents/skills` に追加する
-- 各Skillは「目的 / 入力 / 出力 / 手順 / 必要なコマンド」を明記する
+- 各スキルは「目的 / 入力 / 出力 / 手順 / 必要なコマンド」を明記する

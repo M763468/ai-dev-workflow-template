@@ -21,6 +21,12 @@ Provide a clear, concise snapshot of work status and the next actions.
 - git: check status/history (e.g., `git status`, `git log`)
 - gh: view issues/PRs if needed (e.g., `gh issue view`, `gh pr view`)
 
+## Example commands
+- `git status -sb`
+- `git log -1 --oneline`
+- `gh issue view <number>`
+- `gh pr view <number>`
+
 ## Notes
 - Separate facts from assumptions.
 - Mark out-of-scope suggestions explicitly as proposals.

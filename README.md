@@ -81,7 +81,7 @@ gh issue create --title "[Task] テンプレ動作確認" --body "テンプレ�
 - [docs/LABELS.md](docs/LABELS.md): ラベルの定義と標準
 - [AGENTS.md](AGENTS.md): AIエージェントのための行動指針
 - [docs/PROMPTS.md](docs/PROMPTS.md): プロンプト置き場（雛形）
-- `skills/`: 共通Skills（リポジトリ固有の最適化は `.agents/skills`）
+- `skills/`: 共通スキル（リポジトリ固有の最適化は `.agents/skills`）
 
 ---
 

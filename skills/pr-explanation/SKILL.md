@@ -24,5 +24,9 @@ Explain the PR intent and scope to make review efficient.
 - gh: view PR details if needed (e.g., `gh pr view`, `gh pr diff`)
 - git: review local diffs if needed
 
+## Example commands
+- `gh pr view <number>`
+- `gh pr diff <number>`
+
 ## Notes
 - Optimize for fast reader comprehension.

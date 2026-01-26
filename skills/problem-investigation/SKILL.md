@@ -24,6 +24,11 @@ Clarify reproduction, hypothesize root causes, and define impact and next invest
 - git: inspect history (e.g., `git log`, `git blame`)
 - gh: review issue/PR context if needed
 
+## Example commands
+- `rg \"error\" -n`
+- `git blame <path>`
+- `gh issue view <number>`
+
 ## Notes
 - Clearly label speculation and pair it with a verification method.
 - If the task is investigation-only, do not modify files.

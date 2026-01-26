@@ -21,5 +21,10 @@ Summarize changes clearly and state impact and follow-up needs.
 - git: inspect diffs/history (e.g., `git diff`, `git log`)
 - gh: review PR diff if needed
 
+## Example commands
+- `git diff main...HEAD`
+- `git log --oneline -5`
+- `gh pr diff <number>`
+
 ## Notes
 - Prefer meaningful grouping over raw lists.
