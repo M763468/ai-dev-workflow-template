@@ -25,6 +25,10 @@ warn() {
   printf "[WARN] %s\n" "$*" >&2
 }
 
+err() {
+  printf "[ERROR] %s\n" "$*" >&2
+}
+
 # The root directory of the template where this script resides.
 TEMPLATE_ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 info "Source template directory: ${TEMPLATE_ROOT_DIR}"
@@ -52,17 +56,30 @@ if [[ "${TEMPLATE_ROOT_DIR}" == "${TARGET_DIR}" ]]; then
   warn "Source and target directories are the same. This script is intended to be run from an external project."
 fi
 
+# Check for rsync
+if ! command -v rsync >/dev/null 2>&1; then
+  err "rsync is required but not installed. Aborting."
+  exit 1
+fi
+
 # --- Copy files and directories ---
 for item in "${COPY_ITEMS[@]}"; do
   IFS=":" read -r src dest <<< "${item}"
   SOURCE_PATH="${TEMPLATE_ROOT_DIR}/${src}"
   DEST_PATH="${TARGET_DIR}/${dest}"
 
-  if [ -e "${DEST_PATH}" ]; then
-    warn "Target '${dest}' already exists. Skipping to avoid overwriting."
+  info "Processing '${src}' -> '${dest}'..."
+
+  if [ -d "${SOURCE_PATH}" ]; then
+    # Directory: Merge contents using rsync
+    if [ ! -d "${DEST_PATH}" ]; then
+      info "Creating directory '${dest}'..."
+      mkdir -p "${DEST_PATH}"
+    fi
+    rsync -av --ignore-existing "${SOURCE_PATH}/" "${DEST_PATH}/"
   else
-    info "Copying '${src}' to '${dest}'..."
-    cp -r "${SOURCE_PATH}" "${DEST_PATH}"
+    # File: Copy if not exists
+    rsync -av --ignore-existing "${SOURCE_PATH}" "${DEST_PATH}"
   fi
 done
 
