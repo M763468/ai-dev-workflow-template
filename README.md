@@ -75,7 +75,7 @@ labels / milestones（および任意の初期Issue）を初期化します。
 
 ```bash
 # 1. テンプレートをクローン
-git clone https://github.com/your-org/ai-dev-workflow-template.git
+https://github.com/M763468/ai-dev-workflow-template.git
 
 # 2. 既存プロジェクトに移動
 cd /path/to/your-project
