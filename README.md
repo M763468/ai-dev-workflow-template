@@ -84,11 +84,10 @@ cd /path/to/your-project
 /path/to/ai-dev-workflow-template/scripts/import.sh
 ```
 
-このスクリプトは、テンプレのコア要素（`.github`, `docs`, `scripts`, `skills`, `AGENTS.md`）を安全にコピーします。
-詳細は [docs/WORKFLOW.md](docs/WORKFLOW.md) を参照してください。
+このスクリプトは、テンプレのコア要素（`.github`, `docs`, `skills`, `AGENTS.md`）を安全にコピーします。
+`docs` は `docs/ai-workflow` にコピーされます。詳細は `docs/ai-workflow/WORKFLOW.md` を参照してください。
 
 - `scripts/import.sh`: 既存プロジェクトへのテンプレファイル移植用
-- `scripts/init.sh`: `import.sh` 実行後、または新規プロジェクトのGitHubリソース（labels, milestones）初期化用
 
 #### Step 2: 一部のIssueで試験運用
 
@@ -109,8 +108,8 @@ cd /path/to/your-project
 
 ### 推奨: 参照型 (Reference Model)
 
-**プロジェクトの `README.md` や `CONTRIBUTING.md` から、このテンプレートの `docs/WORKFLOW.md` 等へリンクする** 運用です。
-導入先で `docs/ai-workflow/` などにまとめる場合は、リンクをその置き場所に合わせて調整します。
+**プロジェクトの `README.md` や `CONTRIBUTING.md` から、このテンプレートの `docs/ai-workflow/WORKFLOW.md` 等へリンクする** 運用です。
+`scripts/import.sh` を使った場合は、この `docs/ai-workflow/` にドキュメントがコピーされます。
 
 - **メリット**:
   - 常に最新のテンプレート運用を参照できる
@@ -138,12 +137,11 @@ cd /path/to/your-project
 | ファイル/ディレクトリ | 役割 |
 |:---|:---|
 | `README.md` (このファイル) | **全体像と導入手順**: テンプレートの目的、導入手順、ドキュメントの運用方針を説明する |
-| `docs/WORKFLOW.md` | **具体的な開発フロー**: Issueの立て方からPRのマージまで、詳細な手順を解説 |
-| `docs/LABELS.md` | **ラベル一覧**: IssueやPRで使うラベルの定義 |
+| `docs/ai-workflow/WORKFLOW.md` | **具体的な開発フロー**: Issueの立て方からPRのマージまで、詳細な手順を解説 |
+| `docs/ai-workflow/LABELS.md` | **ラベル一覧**: IssueやPRで使うラベルの定義 |
 | `AGENTS.md` | **AIエージェントへの指示書**: AIが守るべきルールや品質基準を定義 |
-| `docs/PROMPTS.md` | **プロンプト集**: AIへの指示に使えるプロンプトの雛形 |
+| `docs/ai-workflow/PROMPTS.md` | **プロンプト集**: AIへの指示に使えるプロンプトの雛形 |
 | `.github/` | **テンプレート**: Issue / PR のテンプレート |
-| `scripts/` | **支援ツール**: 初期化やチェックのためのスクリプト |
 | `skills/` | **配布用スキル**: 共通スキルの雛形 |
 | `.agents/skills` | **運用スキル置き場**: エージェントが読み込むディレクトリ（推奨） |
 
