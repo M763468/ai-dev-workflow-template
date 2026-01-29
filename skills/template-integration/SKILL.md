@@ -24,6 +24,6 @@ To handle the post-import process of integrating this repository's AI workflow i
 6. **Report on Integration:** Provide a summary of all changes made and flag any files that may require manual review and merging.
 
 ## Example Commands
-This skill primarily relies on file system operations to read, create, and update files.
-- `ls -a <target_project_root>`
+- `find <target_project_root> -name "AGENTS.md"`
+- `tree <target_project_root>/.github`
 - `cat <target_project_root>/AGENTS.md`

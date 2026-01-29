@@ -9,7 +9,6 @@ To check for consistency between the `requirements.txt` file and the import stat
 
 ## Output
 - A report of any inconsistencies found, such as:
-  - Missing dependencies in `requirements.txt`.
   - Unused dependencies in `requirements.txt`.
   - Dependencies that are imported but not listed in `requirements.txt`.
 
@@ -21,5 +20,5 @@ To check for consistency between the `requirements.txt` file and the import stat
 5. Generate a report of any discrepancies found.
 
 ## Example Commands
-- `pip freeze > requirements.txt`
-- `pip check`
+- `deptry .`
+- `pipreqs .`

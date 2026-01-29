@@ -21,5 +21,6 @@ To review pull request comments and apply necessary corrections to the code.
 
 ## Example Commands
 - `gh pr checkout <pr-number>`
+- `gh pr view <pr-number> --comments`
 - `gh pr diff <pr-number>`
 - `gh pr review <pr-number> --body "Addressed comments."`
