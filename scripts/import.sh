@@ -12,8 +12,7 @@ set -euo pipefail
 #
 # The script will copy the following into your project:
 #   - .github/           (Issue and PR templates)
-#   - docs/              (Workflow documentation)
-#   - scripts/           (Initialization and utility scripts)
+#   - docs/              (Workflow documentation, copied to docs/ai-workflow)
 #   - skills/            (Copied to .agents/skills/ for operational use)
 #   - AGENTS.md          (Rules for AI agents)
 
@@ -42,8 +41,7 @@ info "Target project directory:  ${TARGET_DIR}"
 # If destination is empty, it's the same as the source.
 COPY_ITEMS=(
   ".github:.github"
-  "docs:docs"
-  "scripts:scripts"
+  "docs:docs/ai-workflow"
   "AGENTS.md:AGENTS.md"
 )
 
@@ -103,6 +101,5 @@ info "Import complete."
 info "--------------------------------------------------------"
 info "Next Steps:"
 info "1. Review the imported files in your project."
-info "2. Run './scripts/init.sh' to initialize GitHub labels and milestones."
-info "3. Read 'docs/WORKFLOW.md' for a detailed guide on the development process."
+info "2. Read 'docs/ai-workflow/WORKFLOW.md' for a detailed guide on the development process."
 info "--------------------------------------------------------"
