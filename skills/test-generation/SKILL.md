@@ -1,0 +1,25 @@
+# Test Generation
+
+## Purpose
+To generate and expand test code using pytest.
+
+## Input
+- Source code file path
+- Function/method name to be tested
+
+## Output
+- A new or updated test file with pytest test cases.
+- A summary of the generated tests.
+
+## Steps
+1. Analyze the specified source code file to understand its structure and dependencies.
+2. Identify the logic, branches, and potential edge cases of the function/method to be tested.
+3. Generate comprehensive test cases, including positive, negative, and boundary scenarios.
+4. Write test code using the `pytest` framework, including necessary assertions.
+5. Place the generated test code in the appropriate test file, or create a new one if it doesn't exist.
+6. Ensure the generated code is syntactically correct and follows common testing conventions.
+
+## Example Commands
+- `pytest`
+- `pytest tests/`
+- `pytest tests/test_module.py::test_function`
