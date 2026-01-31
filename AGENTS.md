@@ -8,6 +8,7 @@ This document provides a set of rules and guidelines for AI agents (such as Jule
 
 ### Do
 - **Adhere to the Issue Scope**: Implement only what is explicitly defined in the `Goal`, `Scope`, and `Acceptance Criteria` of the assigned issue.
+- **Retrieve Issues via CLI**: Always use `gh issue view <number>` or `gh issue list` to fetch the most up-to-date issue details from GitHub. This ensures you have access to the latest scope, comments, and status.
 - **Follow Established Patterns**: Use existing code patterns, conventions, and architectural styles.
 - **Write Necessary Tests**: Provide lightweight tests to validate your implementation, as specified in the issue.
 - **Use Standard Labels**: Apply labels as defined in `docs/LABELS.md`.
