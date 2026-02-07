@@ -1,3 +1,8 @@
+---
+name: change-summary
+description: Summarize code changes, impact scope, and required follow-up actions.
+---
+
 # change-summary
 
 ## Purpose

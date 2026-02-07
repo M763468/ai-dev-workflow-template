@@ -1,3 +1,8 @@
+---
+name: pr-refinement
+description: Apply fixes based on PR review comments and summarize updates.
+---
+
 # PR Refinement
 
 ## Purpose

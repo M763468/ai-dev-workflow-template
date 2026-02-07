@@ -1,3 +1,8 @@
+---
+name: dependency-management
+description: Check dependency declarations against code imports and report inconsistencies.
+---
+
 # Dependency Management
 
 ## Purpose

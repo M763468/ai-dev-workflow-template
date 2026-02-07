@@ -1,3 +1,8 @@
+---
+name: issue-creation
+description: Draft implementation-ready issues with Goal, Scope, and Acceptance Criteria.
+---
+
 # issue-creation
 
 ## Purpose

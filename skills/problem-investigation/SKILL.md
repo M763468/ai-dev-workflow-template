@@ -1,3 +1,8 @@
+---
+name: problem-investigation
+description: Investigate reported problems with reproduction, hypotheses, and impact analysis.
+---
+
 # problem-investigation
 
 ## Purpose

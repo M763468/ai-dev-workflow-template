@@ -1,3 +1,8 @@
+---
+name: template-integration
+description: Integrate this workflow template into an existing repository safely and consistently.
+---
+
 # Template Integration
 
 ## Purpose

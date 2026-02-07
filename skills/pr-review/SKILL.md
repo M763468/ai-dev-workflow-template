@@ -1,3 +1,8 @@
+---
+name: pr-review
+description: Review pull requests for bugs, regressions, risks, and scope drift.
+---
+
 # pr-review
 
 ## Purpose

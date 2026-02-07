@@ -1,3 +1,8 @@
+---
+name: status-check
+description: Report current task status, blockers, and next actions concisely.
+---
+
 # status-check
 
 ## Purpose

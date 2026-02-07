@@ -1,3 +1,8 @@
+---
+name: test-generation
+description: Generate or extend pytest test cases for target code paths.
+---
+
 # Test Generation
 
 ## Purpose
