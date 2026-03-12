@@ -1,10 +1,8 @@
 name: "Bug / バグ修正"
-description: "不具合の報告と修正依頼"
+description: "不具合の報告と修正依頼 (1 Issue = 1 AI implementation = 1 PR)"
 title: "[Bug] <短い要約>"
 labels:
   - "bug"
-  - "priority:med"
-  - "scope:small"
   - "priority:med"
   - "scope:small"
 body:
@@ -13,6 +11,7 @@ body:
       value: |
         ## 🐛 Bug Report
         再現手順・期待動作・実際の動作を具体的に書いてください。
+        AIは「1 Issue = 1 AI implementation = 1 PR」の原則に基づき、修正範囲が大きすぎる場合は分割を提案してください。
 
   - type: markdown
     attributes:
@@ -40,6 +39,15 @@ body:
       label: "PR base"
       description: "PRの向き先となるブランチ（通常はBase branchと同じ）"
       placeholder: "例: feature/<topic-name>"
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: "Dependencies / Blocked by（依存関係）"
+      description: "このIssueに着手するために完了している必要があるIssue番号など。"
+      placeholder: "例: Closes #100, Depends on #101"
+    validations:
+      required: false
 
   - type: textarea
     id: steps
@@ -99,3 +107,27 @@ body:
         - 想定出力が生成される
     validations:
       required: true
+
+  - type: textarea
+    id: verification_plan
+    attributes:
+      label: "Verification Plan（検証計画）"
+      description: "AIエージェントが修正をどのように検証するかを記述。"
+      placeholder: "例: 再現手順を実行し、エラーが解消され期待動作になることを確認する。"
+    validations:
+      required: true
+
+  - type: textarea
+    id: completion_note
+    attributes:
+      label: "Completion Note（完了報告）"
+      description: "AIエージェントは作業完了時に、実施内容、検証結果、および後続作業への申し送り事項をここに記入してください。"
+      placeholder: |
+        ## 実施内容
+        - xxx を修正しました。
+        ## 検証結果
+        - 再現手順でエラーが出ないことを確認しました。
+        ## 申し送り事項
+        - なし。
+    validations:
+      required: false

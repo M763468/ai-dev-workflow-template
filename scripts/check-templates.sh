@@ -5,12 +5,15 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
 required_files=(
   "README.md"
+  "AGENTS.md"
   ".github/pull_request_template.md"
   ".github/ISSUE_TEMPLATE/feature.yml"
   ".github/ISSUE_TEMPLATE/bug.yml"
   ".github/ISSUE_TEMPLATE/task.yml"
+  ".github/workflows/ci.yml"
   "docs/WORKFLOW.md"
   "docs/PROMPTS.md"
+  "scripts/check-docs.sh"
 )
 
 usage() {
