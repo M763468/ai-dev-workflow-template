@@ -77,7 +77,12 @@ check_skills_structure() {
         if [[ ! -f "${skill_dir}/SKILL.md" ]]; then
           error "Skill '${skill_name}' is missing SKILL.md"
         else
-          info "  [OK] skill: ${skill_name}"
+          # Check for YAML frontmatter in SKILL.md
+          if ! head -n 1 "${skill_dir}/SKILL.md" | grep -q "^---$"; then
+            error "Skill '${skill_name}' SKILL.md is missing YAML frontmatter (---)"
+          else
+            info "  [OK] skill: ${skill_name}"
+          fi
         fi
       fi
     done
