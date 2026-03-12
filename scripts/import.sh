@@ -11,8 +11,9 @@ set -euo pipefail
 #   /path/to/cloned/template/scripts/import.sh
 #
 # The script will copy the following into your project:
-#   - .github/           (Issue and PR templates)
+#   - .github/           (Issue, PR templates, and CI workflows)
 #   - docs/              (Workflow documentation, copied to docs/ai-workflow)
+#   - scripts/           (Initialization and check scripts)
 #   - skills/            (Copied to .agents/skills/ for operational use)
 #   - AGENTS.md          (Rules for AI agents)
 
@@ -42,6 +43,7 @@ info "Target project directory:  ${TARGET_DIR}"
 COPY_ITEMS=(
   ".github:.github"
   "docs:docs/ai-workflow"
+  "scripts:scripts"
   "AGENTS.md:AGENTS.md"
 )
 

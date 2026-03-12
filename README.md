@@ -139,11 +139,12 @@ cd /path/to/your-project
 | `README.md` (このファイル) | **全体像と導入手順**: テンプレートの目的、導入手順、ドキュメントの運用方針を説明する |
 | `docs/ai-workflow/WORKFLOW.md` | **具体的な開発フロー**: Issueの立て方からPRのマージまで、詳細な手順を解説 |
 | `docs/ai-workflow/LABELS.md` | **ラベル一覧**: IssueやPRで使うラベルの定義 |
-| `AGENTS.md` | **AIエージェントへの指示書**: AIが守るべきルールや品質基準を定義 |
+| `AGENTS.md` | **AIエージェントへの指示書**: AIが守るべきルールや品質基準を定義。プロジェクト固有のルールを適宜追記する |
 | `docs/ai-workflow/PROMPTS.md` | **プロンプト集**: AIへの指示に使えるプロンプトの雛形 |
-| `.github/` | **テンプレート**: Issue / PR のテンプレート |
+| `.github/` | **テンプレート**: Issue / PR のテンプレート。CIの設定（`.github/workflows/ci.yml`）はプロジェクトの言語に合わせて要調整 |
 | `skills/` | **配布用スキル**: 共通スキルの雛形 |
 | `.agents/skills` | **運用スキル置き場**: エージェントが読み込むディレクトリ（推奨） |
+| `scripts/check-docs.sh` | **ドキュメント整合性チェック**: READMEと実体の不整合を検知。プロジェクト構成に合わせてチェック内容をカスタマイズして使用する |
 
 ---
 

@@ -29,8 +29,8 @@ MILESTONES=(
 ISSUE_SPECS=(
   "Bootstrap: customize README placeholders|Follow README placeholders and update project-specific sections.\n\n- [ ] Replace <owner>/<repo> links\n- [ ] Update Quickstart with actual commands\n- [ ] Confirm docs entry points are accurate"
   "Bootstrap: decide label policy|Decide how labels will be used for automation and triage.\n\nSuggested decisions:\n- When to use ai:implement vs ai:review\n- How priority labels affect scheduling\n- Who can change blocked status"
-  "Bootstrap: add AGENTS.md|Add AGENTS.md instructions that guide AI agents in this repository.\n\n- [ ] Document coding conventions\n- [ ] Document testing expectations\n- [ ] Document repo-specific gotchas"
-  "Bootstrap: set up CI|Set up continuous integration for basic validation.\n\n- [ ] Choose CI provider (e.g., GitHub Actions)\n- [ ] Run template checks on PRs\n- [ ] Add language/tool-specific tests"
+  "Bootstrap: review AGENTS.md|Review and customize AGENTS.md instructions that guide AI agents in this repository.\n\n- [ ] Document coding conventions\n- [ ] Document testing expectations\n- [ ] Document repo-specific gotchas"
+  "Bootstrap: verify CI and Documentation Consistency|Verify that the CI and documentation consistency checks are working.\n\n- [ ] Run `./scripts/check-templates.sh`\n- [ ] Run `./scripts/check-docs.sh`\n- [ ] Confirm GitHub Actions (CI) is passing"
 )
 
 WITH_ISSUES=0

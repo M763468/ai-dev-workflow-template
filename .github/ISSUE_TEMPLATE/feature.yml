@@ -1,5 +1,5 @@
 name: "Feature / 新機能"
-description: "新機能や実装タスクの提案"
+description: "新機能や実装タスクの提案 (1 Issue = 1 AI implementation = 1 PR)"
 title: "[Feature] <短い要約>"
 labels:
   - "feature"
@@ -11,6 +11,7 @@ body:
       value: |
         ## ✨ Feature Issue
         目的・背景・入出力を明確に書くことで、AIエージェントが迷わず実装できます。
+        AIは「1 Issue = 1 AI implementation = 1 PR」の原則に基づき、タスクが大きすぎる場合は分割を提案してください。
 
   - type: markdown
     attributes:
@@ -38,6 +39,15 @@ body:
       label: "PR base"
       description: "PRの向き先となるブランチ（通常はBase branchと同じ）"
       placeholder: "例: feature/<topic-name>"
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: "Dependencies / Blocked by（依存関係）"
+      description: "このIssueに着手するために完了している必要があるIssue番号など。"
+      placeholder: "例: Closes #100, Depends on #101"
+    validations:
+      required: false
 
   - type: textarea
     id: goal
@@ -108,6 +118,15 @@ body:
       required: true
 
   - type: textarea
+    id: verification_plan
+    attributes:
+      label: "Verification Plan（検証計画）"
+      description: "AIエージェントが修正・実装をどのように検証するかを記述。"
+      placeholder: "例: `pytest tests/test_demucs.py` を実行し、全テストがパスすることを確認する。"
+    validations:
+      required: true
+
+  - type: textarea
     id: implementation_notes
     attributes:
       label: "Implementation Notes（実装メモ）"
@@ -115,5 +134,20 @@ body:
       placeholder: |
         - subprocess で demucs を呼び出す
         - 同一入力ならスキップできるオプションがあると良い
+    validations:
+      required: false
+
+  - type: textarea
+    id: completion_note
+    attributes:
+      label: "Completion Note（完了報告）"
+      description: "AIエージェントは作業完了時に、実施内容、検証結果、および後続作業への申し送り事項をここに記入してください。"
+      placeholder: |
+        ## 実施内容
+        - xxx を実装しました。
+        ## 検証結果
+        - xxx のテストがパスしました。
+        ## 申し送り事項
+        - 次のIssueでは xxx を行う必要があります。
     validations:
       required: false

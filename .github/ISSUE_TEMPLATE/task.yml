@@ -1,11 +1,17 @@
 name: "Task / 雑務・リファクタ・ドキュメント"
-description: "小さめの作業や整備"
+description: "小さめの作業や整備 (1 Issue = 1 AI implementation = 1 PR)"
 title: "[Task] <短い要約>"
 labels:
   - "task"
   - "priority:med"
   - "scope:small"
 body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🛠 Task Issue
+        AIは「1 Issue = 1 AI implementation = 1 PR」の原則に基づき、タスクが大きすぎる場合は分割を提案してください。
+
   - type: markdown
     attributes:
       value: |
@@ -34,6 +40,15 @@ body:
       placeholder: "例: feature/<topic-name>"
 
   - type: textarea
+    id: dependencies
+    attributes:
+      label: "Dependencies / Blocked by（依存関係）"
+      description: "このIssueに着手するために完了している必要があるIssue番号など。"
+      placeholder: "例: Closes #100, Depends on #101"
+    validations:
+      required: false
+
+  - type: textarea
     id: goal
     attributes:
       label: "Goal"
@@ -52,9 +67,33 @@ body:
       required: true
 
   - type: textarea
+    id: verification_plan
+    attributes:
+      label: "Verification Plan（検証計画）"
+      description: "AIエージェントがタスクの完了をどのように検証するかを記述。"
+      placeholder: "例: README をプレビューし、リンク切れがないことを確認する。"
+    validations:
+      required: true
+
+  - type: textarea
     id: notes
     attributes:
       label: "Notes"
       description: "注意点や関連リンクなど。"
+    validations:
+      required: false
+
+  - type: textarea
+    id: completion_note
+    attributes:
+      label: "Completion Note（完了報告）"
+      description: "AIエージェントは作業完了時に、実施内容、検証結果、および後続作業への申し送り事項をここに記入してください。"
+      placeholder: |
+        ## 実施内容
+        - xxx を実施しました。
+        ## 検証結果
+        - xxx を確認しました。
+        ## 申し送り事項
+        - なし。
     validations:
       required: false

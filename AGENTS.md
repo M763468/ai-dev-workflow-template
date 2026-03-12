@@ -8,9 +8,14 @@ This document provides a set of rules and guidelines for AI agents (such as Jule
 
 ### Do
 - **Adhere to the Issue Scope**: Implement only what is explicitly defined in the `Goal`, `Scope`, and `Acceptance Criteria` of the assigned issue.
+- **Analyze Task Granularity**: Before starting, verify if the task fits the "1 Issue = 1 AI implementation = 1 PR" principle. If the task is too large or complex, suggest breaking it down into smaller issues.
 - **Retrieve Issues via CLI**: Always use `gh issue view <number>` or `gh issue list` to fetch the most up-to-date issue details from GitHub. This ensures you have access to the latest scope, comments, and status.
 - **Follow Established Patterns**: Use existing code patterns, conventions, and architectural styles.
 - **Write Necessary Tests**: Provide lightweight tests to validate your implementation, as specified in the issue.
+- **Provide Verification Report**: After implementation, run the `Verification Plan` and provide a clear report of the results (e.g., test outputs, screenshots, or logs) in the issue or PR description.
+- **Record Completion Note**: Upon finishing a task, fill in the `Completion Note` section of the GitHub Issue. Summarize what was done, what was verified, and any follow-up actions or blockers for future tasks.
+- **Maintain Documentation Consistency**: Ensure that any changes to the repository structure, CLI usage, or system behavior are immediately reflected in `README.md` and related documentation. If the repository structure changes, update `scripts/check-docs.sh` to include the new paths in its verification logic.
+- **Update CI/CD Configuration**: If a change introduces new build tools, runtime requirements, or test commands, ensure that `.github/workflows/ci.yml` is updated to reflect these changes.
 - **Use Standard Labels**: Apply labels as defined in `docs/LABELS.md`.
 - **Update Documentation**: If your changes affect user-facing behavior or system design, indicate that the README or other documentation needs to be updated.
 

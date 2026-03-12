@@ -13,9 +13,15 @@
 **1 Issue = 1 AI実装 = 1 Pull Request**
 
 - 人間: 設計・Issue定義・レビュー・マージ判断
-- AI: 実装・軽量テスト・PR作成
+- AI: 実装・検証・PR作成
 
 > AIは「作業者」、人間は「設計者 + 編集者」
+
+### AIエージェントの基本動作ルール
+1. **タスク粒度の検証**: 作業開始前に、Issueのスコープが「1 Issue = 1 AI implementation = 1 PR」に収まっているかを確認し、大きすぎる場合は分割を提案します。
+2. **検証計画の実行**: 実装後、Issueに記載された `Verification Plan` に基づき動作確認を行い、結果を報告します。
+3. **完了報告（Completion Note）の記入**: 作業完了時、GitHub Issueの `Completion Note` 欄に実施内容と検証結果をまとめます。
+4. **ドキュメント整合性の維持**: コード変更に合わせて README や関連ドキュメントを更新し、整合性を保ちます。
 
 ---
 
@@ -94,6 +100,7 @@ cd /path/to/your-project
 - Related Issue（Closes #）を必須化
 - Scope（In / Out）を明示
 - AI側テスト / 人間側テストを分離
+- **Completion Note の参照**: Issueに記入された完了報告へのリンクや要約を含める
 
 これにより:
 - AIの先取り実装を防止
@@ -106,13 +113,14 @@ cd /path/to/your-project
 ### Issueに必ず書く項目
 
 - Goal（このIssueで達成すること）
+- Dependencies / Blocked by（依存関係）
 - Scope（In / Out）
 - Inputs / Outputs（パス・ファイル名を固定）
 - CLI usage example
 - Acceptance Criteria（チェックリスト）
+- Verification Plan（AIによる検証手順）
 - How to test
-  - AI側確認
-  - 人間側確認
+  - 人間による最終確認手順
 
 > Acceptance Criteria = 契約書
 
@@ -274,3 +282,20 @@ merge
 
 AIエージェント向けの具体的なルールやガイドラインについては、リポジトリルートの [AGENTS.md](../AGENTS.md) を参照してください。
 このドキュメントはAIエージェントのための「憲法」として機能し、品質基準や行動規範を定義しています。
+
+---
+
+## 13. ドキュメント整合性の自動検証
+
+本テンプレートでは、ドキュメントとリポジトリ構成の整合性を保つためのスクリプトを提供しています。
+
+```bash
+./scripts/check-docs.sh
+```
+
+このスクリプトは以下を検証します：
+- README.md に記載されたドキュメントパスの実在確認
+- `skills/` 配下の各スキルに `SKILL.md` が存在するか
+- 必須ファイル（AGENTS.md 等）の存在確認
+
+また、GitHub Actions (CI) により、プルリクエストごとにこれらの整合性が自動的にチェックされます。
