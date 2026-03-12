@@ -21,11 +21,20 @@ error() {
   errors=$((errors + 1))
 }
 
+check_readme_exists() {
+  info "Checking if README.md exists..."
+  if [[ ! -f "README.md" ]]; then
+    error "README.md is missing"
+    return 1
+  fi
+  info "  [OK] README.md"
+  return 0
+}
+
 check_readme_links() {
   info "Checking README.md table for existing files/directories..."
-  # Only extract paths from the "各ドキュメントの役割" table
-  # We look for lines starting with | followed by backticked text
-  # We avoid pipes to maintain the 'errors' variable state
+  # Only extract paths from the first column of the "各ドキュメントの役割" table
+  # We look for lines starting with | followed by backticked text in the first column
   while read -r path; do
     if [[ -z "${path}" ]]; then continue; fi
     # Skip paths that look like templates or examples (e.g. feature/<topic-name>)
@@ -53,7 +62,7 @@ check_readme_links() {
     else
       info "  [OK] ${path}"
     fi
-  done < <(sed -n '/## 各ドキュメントの役割/,/##/p' README.md | grep '^| `[^`]*`' | grep -o '`[^`]*`' | tr -d '`')
+  done < <(sed -n '/## 各ドキュメントの役割/,/##/p' README.md | grep '^| `[^`]*`' | cut -d '|' -f 2 | grep -o '`[^`]*`' | tr -d '`')
 }
 
 check_skills_structure() {
@@ -73,7 +82,7 @@ check_skills_structure() {
       fi
     done
   else
-    info "  [SKIP] skills/ directory not found"
+    info "  [SKIP] ${skills_base}/ directory not found"
   fi
 }
 
@@ -97,7 +106,9 @@ check_mandatory_files() {
 }
 
 check_mandatory_files
-check_readme_links
+if check_readme_exists; then
+  check_readme_links
+fi
 check_skills_structure
 
 if [[ "${errors}" -gt 0 ]]; then
